@@ -1,0 +1,25 @@
+{
+  "name": "mollybick",
+  "version": "1.0.0",
+  "description": "Practice Project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollybick/in-class-work.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "spa"
+  ],
+  "author": "Molly Bick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mollybick/in-class-work/issues"
+  },
+  "homepage": "https://github.com/mollybick/in-class-work#readme"
+}
