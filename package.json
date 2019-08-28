@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/mollybick/in-class-work/issues"
   },
-  "homepage": "https://github.com/mollybick/in-class-work#readme"
+  "homepage": "https://github.com/mollybick/in-class-work#readme",
+  "devDependencies": {
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "stylelint-config-prettier": "^5.2.0"
+  }
 }
