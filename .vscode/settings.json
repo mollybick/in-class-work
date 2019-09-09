@@ -19,4 +19,6 @@
     "better-comments.highlightPlainText": true,
     "eslint.autoFixOnSave": true,
     "files.eol": "\n"
+    "stylelint.enable": true,
+    "css.validate": false,
   }
