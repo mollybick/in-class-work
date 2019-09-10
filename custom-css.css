@@ -3,7 +3,6 @@
   --second-color: #39a0ed;
   --background: #ffffff
   --primary-text: #000000
-  --base-spacing: 8px;
   --border-primary: solid var(--primary-variant) 3px;
   --border-secondary: solid var(--secondary-variant) 3px;
 }
@@ -28,7 +27,6 @@ body {
 }
 
 p{
-  section:nth-of-type(even){
     background: var(var(--first-color));
     color: var(--primary-text);
   }
@@ -36,7 +34,13 @@ p{
 
   /* layout  */
 
-figure, h1: {
-  margin: 0;
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-}
+  img {
+    border-radius: 50%;
+
+  }
