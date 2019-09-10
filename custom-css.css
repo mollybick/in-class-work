@@ -1,11 +1,16 @@
 :root {
   --first-color: #4c6085;
   --second-color: #39a0ed;
+  --background: #ffffff
+  --primary-text: #000000
+  --base-spacing: 8px;
+  --border-primary: solid var(--primary-variant) 3px;
+  --border-secondary: solid var(--secondary-variant) 3px;
 }
 
 #firstParagraph {
-  background-color: var(--first-color);
-  color: var(--second-color);
+  color: var(--first-color);
+  background-color: var(--second-color);
 }
 
 #secondParagraph {
@@ -14,6 +19,24 @@
 }
 
 #thirdParagraph {
-  background-color: var(--first-color);
-  color: var(--second-color);
+  color: var(--first-color);
+  background-color: var(--second-color);
+}
+
+body {
+  font-family: "Times New Roman", sans-serif
+}
+
+p{
+  section:nth-of-type(even){
+    background: var(var(--first-color));
+    color: var(--primary-text);
+  }
+
+
+  /* layout  */
+
+figure, h1: {
+  margin: 0;
+
 }
