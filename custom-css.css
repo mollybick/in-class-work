@@ -3,6 +3,7 @@
   --second-color: #39a0ed;
   --background: #fff;
   --primary-text: #000;
+  --base-spacing: 8px;
   --border-primary: solid var(--primary-variant) 3px;
   --border-secondary: solid var(--secondary-variant) 3px;
 }
@@ -60,3 +61,11 @@ nav li {
   padding: var(--base-spacing) 0;
 }
 
+.fas {
+  font-size: 48px;
+}
+
+nav .fas {
+  margin: var(--base-spacing);
+  transform: translateX(80vw);
+}
