@@ -32,6 +32,15 @@ p {
   color: var(--primary-text);
 }
 
+nav {
+  min-height: 72px;
+}
+
+.is-hidden {
+  font-size: 0;
+  height: 0;
+}
+
 /* layout  */
 
 figure {
@@ -67,5 +76,13 @@ nav li {
 
 nav .fas {
   margin: var(--base-spacing);
-  transform: translateX(80vw);
+  position: absolute;
+  transform: translateX(calc(100vw - var(--base-spacing) * 10));
+}
+
+.hero {
+  background: url(https://picsum.photos/680/420) center center no-repeat;
+  background-size: cover;
+  height: 20vh;
+  max-height: 420px;
 }
