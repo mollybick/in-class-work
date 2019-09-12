@@ -81,8 +81,56 @@ nav .fas {
 }
 
 .hero {
+  align-items: center;
   background: url(https://picsum.photos/680/420) center center no-repeat;
   background-size: cover;
   height: 20vh;
   max-height: 420px;
+  display: flex;
+  justify-content: center;
+}
+
+nav a,
+.hero a {
+  /* Remove underline. */
+  text-decoration: none;
+}
+
+.hero a {
+  background: var(--secondary);
+  border-radius: var(--base-spacing);
+  padding: var(--base-spacing);
+}
+
+.hero a,
+.read-more-btn {
+
+/* .hero a:hover {
+  background: var(--secondary-variant);
+} */
+
+section  {
+  padding: calc(var(--base-spacing) * 3);
+}
+
+
+
+
+
+element.style {
+  max-width: 120px;
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+section {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.read-more-btn: {
+  max-width: calc(var(--base-spacing) * 15);
+  text-align: center;
+}
 }
