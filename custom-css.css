@@ -54,6 +54,7 @@ img {
 }
 
 ul {
+  list-style-type: none;
   padding: 0;
 }
 
@@ -90,7 +91,7 @@ nav .fas {
   justify-content: center;
 }
 
-nav a,
+footer a, nav a,
 .hero a {
   /* Remove underline. */
   text-decoration: none;
@@ -102,9 +103,6 @@ nav a,
   padding: var(--base-spacing);
 }
 
-.hero a,
-.read-more-btn {
-
 /* .hero a:hover {
   background: var(--secondary-variant);
 } */
@@ -112,10 +110,6 @@ nav a,
 section  {
   padding: calc(var(--base-spacing) * 3);
 }
-
-
-
-
 
 element.style {
   max-width: 120px;
@@ -132,5 +126,28 @@ section {
 .read-more-btn: {
   max-width: calc(var(--base-spacing) * 15);
   text-align: center;
+  background: white;
+  display: inline-block;
+  margin: var(--base-spacing) 0;
 }
+
+footer {
+  border-top: var(--border-primary);
+  padding: calc(var(--base-spacing) * 2);
 }
+
+footer a {
+  color: white;
+
+  footer ul {
+    /* By default, this will do flex-direction: row; */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .read-more-btn {
+  background: white;
+  display: inline-block;
+  margin: var(--base-spacing) 0;
+}
+
