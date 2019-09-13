@@ -36,7 +36,9 @@ nav {
   min-height: 72px;
 }
 
-.is-hidden {
+.is-hidden--mobile,
+.is-hidden--tablet,
+.is-hidden--desktop {
   font-size: 0;
   height: 0;
 }
@@ -112,16 +114,17 @@ section {
   padding: calc(var(--base-spacing) * 3);
 }
 
-@media screen and (min-width: 768px) {
-  section {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .read-more-btn: {
   max-width: calc(var(--base-spacing) * 15);
-  text-align: center;
+  background: var(--primary-text);
+  margin: var(--base-spacing) 0;
+  align-items: center;
+  border-radius: var(--base-spacing);
+  padding: var(--base-spacing);
+
+}
+
+.read-more-btn {
   background: white;
   display: inline-block;
   margin: var(--base-spacing) 0;
@@ -142,8 +145,49 @@ footer ul {
   justify-content: space-between;
 }
 
+header figure {
+  margin-right: calc(var(--base-spacing) * 2);
+}
+
+.flex-container--desktop {
+  display: flex;
+}
+/* This should apply for tablets and above! */
+@media screen and (min-width: 768px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .is-hidden--tablet {
+    font-size: 0;
+    height: 0;
+  }
+  .read-more-btn {
+    max-width: calc(var(--base-spacing) * 15);
+    text-align: center;
+    align-self: center;
+}
 .read-more-btn {
-  background: white;
-  display: inline-block;
-  margin: var(--base-spacing) 0;
+  max-width: calc(var(--base-spacing) * 15);
+  text-align: center;
+  align-self: center;
+}
+/* This should apply for desktops and above. */
+@media screen and (min-width: 1024px) {
+  header {
+    flex-direction: row;
+    padding: calc(var(--base-spacing) * 2);
+  }
+  header figure {
+    margin-right: calc(var(--base-spacing) * 2);
+  }
+  .is-hidden--desktop {
+    font-size: 0;
+    height: 0;
+  }
+  .is-shown--desktop {
+    font-size: 1em;
+    min-height: ;
+  }
 }
