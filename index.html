@@ -1,49 +1,51 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
-      <link rel="stylesheet" href="./custom-css.css" type="text/css"/>
-
-      <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Molly Bick Practice Project</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
 
-    <title>Molly Bick Practice Project</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="./custom-css.css" type="text/css"/>
+    </head>
+
+    <body>
     <header>
-      <figure><img src="https://picsum.photos/200/300" alt="" />
+      <figure>
+        <img
+        srcset="
+        srcset="
+            https://picsum.photos/200,
+            https://picsum.photos/300 1.5x,
+            https://picsum.photos/400 2x,
+            https://picsum.photos/600 3x
+          "
+          src="https://picsum.photos/600" alt="Image"
+        />
+        </figure>
         <h1>Molly Bick's Project</h1>
     </header>
-    <!-- We usually only have 1 <nav> to represent our primary navigation. -->
-    <nav>
-        <span class="fas fa-hamburger is-hidden-desktop"></span>
-      <ul class="is-hidden--mobile is-hidden--tablet is-shown--desktop">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about">About</a></li>
-        <li><a href="./contact">Contact</a></li>
-        <li><a href="./gallery">Gallery</a></li>
-        <li><a href="./blog">Blog</a></li>
-      </ul>
-    </nav>
+
+        <nav>
+            <span class="fas fa-hamburger is-hidden--desktop"></span>
+              <ul class="is-hidden--mobile is-hidden--tablet is-shown--desktop">
+                <li><a href="./">Home</a></li>
+                <li><a href="./about/">About</a></li>
+                <li><a href="./contact/">Contact</a></li>
+                <li><a href="./gallery/">Gallery</a></li>
+                <li><a href="./blog/">Blog</a></li>
+              </ul>
+            </nav>
     <main>
-
     <div class ="hero">
-
-      <a href="#">Fake CTA Btn</a>
+    <a href="#">Fake CTA Btn</a>
     </div>
 
-    <div class="flex-container--desktop"></div>
-
-    <Section>
-    </Section>
-
-    <Section>
-    </Section>
+    <div class="flex-container--desktop">
 
       <section>
         <h2>Some Fake Heading</h2>
@@ -53,8 +55,9 @@
           distinctio quod, tenetur nulla, alias fugiat quaerat. Enim accusantium
           cumque hic est?
         </p>
-        <a href="">Read More!</a>
+        <a href="" class="read-more-btn">Read More!</a>
       </section>
+
       <section>
         <h2>Some Fake Heading</h2>
         <p id="secondParagraph">
@@ -65,6 +68,7 @@
         </p>
         <a href="" class="read-more-btn">Read More!</a>
       </section>
+
       <section>
         <h2>Some Fake Heading</h2>
         <p id="thirdParagraph">
@@ -75,6 +79,9 @@
         </p>
         <a href="" class="read-more-btn">Read More!</a>
       </section>
+        </div>
+    </main>
+
       <footer>
         <ul>
             <li><a href="./">Home</a></li>
@@ -85,6 +92,5 @@
         </ul>
         <p>&copy; 2019 Molly Bick &bullet; No rights reserved!</p>
       </footer>
-    </main>
   </body>
 </html>

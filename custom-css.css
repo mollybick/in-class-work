@@ -2,7 +2,8 @@
   --first-color: #4c6085;
   --second-color: #39a0ed;
   --background: #fff;
-  --primary-text: #000;
+  --primary-text: #fff;
+  --secondary-text:#000;
   --base-spacing: 8px;
   --border-primary: solid var(--primary-variant) 3px;
   --border-secondary: solid var(--secondary-variant) 3px;
@@ -24,7 +25,7 @@
 }
 
 body {
-  font-family: "Times New Roman", sans-serif;
+  font-family: 'Caveat', cursive;
 }
 
 p {
@@ -168,11 +169,11 @@ header figure {
     text-align: center;
     align-self: center;
 }
-.read-more-btn {
-  max-width: calc(var(--base-spacing) * 15);
-  text-align: center;
-  align-self: center;
+
+.hero {
+  height: 40vh;
 }
+
 /* This should apply for desktops and above. */
 @media screen and (min-width: 1024px) {
   header {
@@ -187,25 +188,56 @@ header figure {
     height: 0;
   }
   .is-shown--desktop {
-    font-size: 1em;
-    min-height: ;
+    font-size: initial;
   }
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  section p {
+    margin-bottom: auto;
+  }
+
+  .hero {
+height: 60vh;
+  }
+
+  .flex-container--desktop {
+    display: flex;
+  }
+
 }
 
 /* Form */
 
-form {
+form,
+form div {
   display: flex;
   flex-direction: column;
+}
+
+form {
+  padding: var(--base-spacing);
 }
 
 input,
 textarea {
   border: solid thin black;
+  max-width: 80vw;
 }
 
 form div {
-  display: flex;
-  flex-direction: column;
   margin: var(--base-spacing);
 }
+
+input[type="submit"] {
+  background: var(--secondary);
+  border-radius: var(--base-spacing);
+  display: inline-block;
+  margin: var(--base-spacing) 0;
+  min-height: calc(var(--base-spacing) * 6);
+  max-width: calc(var(--base-spacing) * 12);
+  text-align: center
+
