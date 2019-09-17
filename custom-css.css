@@ -175,7 +175,7 @@ header figure {
 }
 
 /* This should apply for desktops and above. */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   header {
     flex-direction: row;
     padding: calc(var(--base-spacing) * 2);
@@ -208,7 +208,10 @@ height: 60vh;
     display: flex;
   }
 
-}
+  .flex-row--desktop {
+  flex-direction: row;
+  }
+  }
 
 /* Form */
 
@@ -241,3 +244,10 @@ input[type="submit"] {
   max-width: calc(var(--base-spacing) * 12);
   text-align: center
 
+}
+
+  /* To be used with Javascript */
+
+  /* .is-error {
+    box-shadow: 4px 3px 3px red;
+    } */
