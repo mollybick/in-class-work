@@ -13,4 +13,5 @@ let answer = prompt(question);
 
 document.querySelector("#root").innerHTML = `<p>${greeter()}</p>`
 
-use innerhtml
+const hamburger = document.querySelector(".fa-hamburger");
+const hiddenUL = document.querySelector("ul");
