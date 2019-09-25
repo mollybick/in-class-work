@@ -4,7 +4,7 @@ function greeter(question = "What is your name?") {
   /* If answer is blank, ask again */
 
   if (answer === "") {
-  return greeter(); // recursion
+    return greeter(); // recursion
 
   return answer;
 }
