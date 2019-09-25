@@ -15,3 +15,8 @@ document.querySelector("#root").innerHTML = `<p>${greeter()}</p>`
 
 const hamburger = document.querySelector(".fa-hamburger");
 const hiddenUL = document.querySelector("ul");
+
+hamburger.addEventListener('click', function() {
+
+
+})
