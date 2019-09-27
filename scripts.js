@@ -3,5 +3,4 @@ const hiddenUL = document.querySelector("ul");
 
 hamburger.addEventListener("click", () => {
   hiddenUL.classList.toggle("is-hidden--tablet");
-
 });
