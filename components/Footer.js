@@ -1,4 +1,5 @@
-export default `
+export default function() {
+  return `
 <footer>
         <ul>
             <li><a href="./">Home</a></li>
@@ -9,3 +10,4 @@ export default `
         </ul>
         <p>&copy; 2019 Molly Bick &bullet; No rights reserved!</p>
       </footer>`;
+}

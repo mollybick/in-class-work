@@ -1,4 +1,5 @@
-export default `
+export default function() {
+  return `
 <nav>
             <span class="fas fa-hamburger is-hidden--desktop"></span>
               <ul class="is-hidden--tablet is-shown--desktop">
@@ -9,3 +10,4 @@ export default `
                 <li><a href="./blog/">Blog</a></li>
               </ul>
             </nav>`;
+}
