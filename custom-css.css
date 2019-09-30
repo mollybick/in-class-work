@@ -37,9 +37,7 @@ nav {
   min-height: 72px;
 }
 
-.is-hidden--mobile,
-.is-hidden--tablet,
-.is-hidden--desktop {
+.is-hidden--mobile {
   font-size: 0;
   height: 0;
 }
@@ -122,13 +120,7 @@ section {
   align-items: center;
   border-radius: var(--base-spacing);
   padding: var(--base-spacing);
-
-}
-
-.read-more-btn {
-  background: white;
   display: inline-block;
-  margin: var(--base-spacing) 0;
 }
 
 footer {
