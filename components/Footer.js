@@ -11,4 +11,3 @@ export default function(year = 2019) {
         <p>&copy; ${year} Molly Bick &bullet; No rights reserved!</p>
       </footer>`;
 }
-
