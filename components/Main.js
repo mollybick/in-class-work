@@ -1,6 +1,7 @@
 export default function() {
-  return
-  ` <main>
+  return `
+
+  <main>
     <div class ="hero">
     <a href="#">Fake CTA Btn</a>
     </div>
