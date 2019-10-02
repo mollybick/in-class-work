@@ -25,10 +25,10 @@ ${Footer()}
 
 render();
 
-const aboutLink = document.querySelector("#about");
+const links = document.querySelectorAll("nav a");
 
-aboutLink.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  render(state[event.target.textContent]);
-})
+for (let i = 0; i < links.length; i += 1) {
+  links[i].addEventListener("click", function(event) {
+    event.preventDefault();
+  });
+}
