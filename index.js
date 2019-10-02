@@ -12,18 +12,23 @@ const state = {
   }
 };
 
-document.querySelector("#root").innerHTML = `
-${Header(state.home.header)}
+//The parameter st represents a piece of state.
+
+function render(st = state.home) {
+  document.querySelector("#root").innerHTML = `
+${Header(st.heading)}
 ${Nav()}
 ${Main()}
 ${Footer()}
 `;
+}
 
-const aboutLink = document.querySelector('#about');
+render();
 
-aboutLink.addEventListener('click', function(event) {
+const aboutLink = document.querySelector("#about");
+
+aboutLink.addEventListener("click", function(event) {
   event.preventDefault();
-  const aboutText = event.target.textContent;
-  console.log('about text is:', aboutText);
-  console.log(state[aboutText]);
-});
+
+  render(state[event.target.textContent]);
+})
