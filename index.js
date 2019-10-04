@@ -1,23 +1,12 @@
-// Below is an example of object destructuring
-
 import { Header, Nav, Main, Footer } from "./components";
-
-const state = {
-  home: {
-    heading: "Home Page"
-  },
-
-  About: {
-    heading: "About Page"
-  }
-};
+import { Home, About, Contact, Blog, Gallery, Links } from "./store";
 
 //The parameter st represents a piece of state.
 
-function render(st = state.home) {
+function render(st = Home) {
   document.querySelector("#root").innerHTML = `
-${Header(st.heading)}
-${Nav()}
+${Header(st)}
+${Nav(st)}
 ${Main()}
 ${Footer()}
 `;
@@ -25,10 +14,12 @@ ${Footer()}
 
 render();
 
-const links = document.querySelectorAll("nav a");
+const links = document.querySelectorAll("nav a, footer a");
 
 for (let i = 0; i < links.length; i += 1) {
   links[i].addEventListener("click", function(event) {
     event.preventDefault();
+
+    render(event.target.textContent);
   });
 }
