@@ -1,4 +1,4 @@
-export default function(heading = "Molly Bick Practice Project") {
+export default function(st) {
   return `<header>
 <figure>
   <img
@@ -12,6 +12,6 @@ export default function(heading = "Molly Bick Practice Project") {
     src="https://picsum.photos/600" alt="Image"
   />
   </figure>
-  <h1>${heading}</h1>
+  <h1>${st.heading}</h1>
 </header>`;
 }

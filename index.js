@@ -33,7 +33,7 @@ const state = {
 
 function render(st = state.home) {
   document.querySelector("#root").innerHTML = `
-${Header(st.heading)}
+${Header(st)}
 ${Nav(st)}
 ${Main(st)}
 ${Footer(st)}
