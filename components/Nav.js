@@ -1,13 +1,19 @@
-export default function() {
+function linksBuilder(links) {
+  let linksHTML = "";
+
+  for (let i = 0; i < links.length; i += 1) {
+    linksHTML += `<li><a = href="./${links[i]}">${links[i]}</a></li>`;
+  }
+  return linksHTML;
+}
+
+export default function(st) {
   return `
-<nav>
+  <nav>
             <span class="fas fa-hamburger is-hidden--desktop"></span>
               <ul class="is-hidden--tablet is-shown--desktop">
-                <li><a href="./">Home</a></li>
-                <li><a href="./about/" id="about" >About</a></li>
-                <li><a href="./contact/">Contact</a></li>
-                <li><a href="./gallery/">Gallery</a></li>
-                <li><a href="./blog/">Blog</a></li>
+              ${linksBuilder(st.links)}
               </ul>
-            </nav>`;
+            </nav>
+            `;
 }

@@ -4,23 +4,28 @@ import { Header, Nav, Main, Footer } from "./components";
 
 const state = {
   home: {
-    heading: "Home Page"
+    heading: "Home Page",
+    links: ["Home", "About", "Contact", "Blog", "Gallery"]
   },
 
   about: {
-    heading: "About Page"
+    heading: "About Page",
+    links: ["Home", "About", "Contact", "Blog", "Gallery"]
   },
 
   contact: {
-    heading: "Contact Page"
+    heading: "Contact Page",
+    links: ["Home", "About", "Contact", "Blog", "Gallery"]
   },
 
   blog: {
-    heading: "Blog page"
+    heading: "Blog page",
+    links: ["Home", "About", "Contact", "Blog", "Gallery"]
   },
 
   gallery: {
-    heading: "Gallery page"
+    heading: "Gallery page",
+    links: ["Home", "About", "Contact", "Blog", "Gallery"]
   }
 };
 
@@ -29,9 +34,9 @@ const state = {
 function render(st = state.home) {
   document.querySelector("#root").innerHTML = `
 ${Header(st.heading)}
-${Nav()}
-${Main()}
-${Footer()}
+${Nav(st)}
+${Main(st)}
+${Footer(st)}
 `;
 }
 
