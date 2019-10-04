@@ -42,7 +42,7 @@ ${Footer(st)}
 
 render();
 
-const links = document.querySelectorAll("nav a");
+const links = document.querySelectorAll("nav a, footer a");
 
 for (let i = 0; i < links.length; i += 1) {
   links[i].addEventListener("click", function(event) {
