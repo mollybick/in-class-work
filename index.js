@@ -7,8 +7,20 @@ const state = {
     heading: "Home Page"
   },
 
-  About: {
+  about: {
     heading: "About Page"
+  },
+
+  contact: {
+    heading: "Contact Page"
+  },
+
+  blog: {
+    heading: "Blog page"
+  },
+
+  gallery: {
+    heading: "Gallery page"
   }
 };
 
@@ -30,5 +42,7 @@ const links = document.querySelectorAll("nav a");
 for (let i = 0; i < links.length; i += 1) {
   links[i].addEventListener("click", function(event) {
     event.preventDefault();
+
+    render(state[event.target.textContent.toLowerCase()]);
   });
 }
