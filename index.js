@@ -17,7 +17,7 @@ render();
 const links = document.querySelectorAll("nav a, footer a");
 
 for (let i = 0; i < links.length; i += 1) {
-  links[i].addEventListener("click", function(event) {
+  links[i].addEventListener("click", event => {
     event.preventDefault();
 
     render(state[event.target.textContent]);

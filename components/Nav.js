@@ -1,4 +1,4 @@
-import { Links } from "../store"
+import { Links } from "../store";
 
 function linksBuilder(links) {
   let linksHTML = "";
@@ -9,8 +9,7 @@ function linksBuilder(links) {
   return linksHTML;
 }
 
-export default function(st) {
-  return `
+export default () => `
   <nav>
             <span class="fas fa-hamburger is-hidden--desktop"></span>
               <ul class="is-hidden--tablet is-shown--desktop">
@@ -18,4 +17,3 @@ export default function(st) {
               </ul>
             </nav>
             `;
-}

@@ -1,5 +1,5 @@
-export default function() {
-  return `
+export default () =>
+  `
 
   <main>
     <div class ="hero">
@@ -43,4 +43,3 @@ export default function() {
         </div>
     </main>
 `;
-}

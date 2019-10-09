@@ -1,5 +1,4 @@
-export default function(year = 2019) {
-  return `
+export default (year = 2019) => `
 <footer>
         <ul>
             <li><a href="./">Home</a></li>
@@ -10,4 +9,3 @@ export default function(year = 2019) {
         </ul>
         <p>&copy; ${year} Molly Bick &bullet; No rights reserved!</p>
       </footer>`;
-}

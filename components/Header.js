@@ -1,5 +1,4 @@
-export default function(st) {
-  return `<header>
+export default st => `<header>
 <figure>
   <img
   src="https://picsum.photos/id/340/200/300"
@@ -14,4 +13,3 @@ export default function(st) {
   </figure>
   <h1>${st.heading}</h1>
 </header>`;
-}
