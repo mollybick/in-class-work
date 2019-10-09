@@ -1,3 +1,5 @@
+import { Links } from "../store"
+
 function linksBuilder(links) {
   let linksHTML = "";
 
@@ -12,7 +14,7 @@ export default function(st) {
   <nav>
             <span class="fas fa-hamburger is-hidden--desktop"></span>
               <ul class="is-hidden--tablet is-shown--desktop">
-              ${linksBuilder(st.links)}
+              ${linksBuilder(Links)}
               </ul>
             </nav>
             `;

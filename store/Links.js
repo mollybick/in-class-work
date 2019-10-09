@@ -1,3 +1,1 @@
-export default {
-  links: ["Home", "About", "Contact", "Blog", "Gallery"]
-};
+export default ["Home", "About", "Contact", "Blog", "Gallery"];
