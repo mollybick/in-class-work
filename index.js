@@ -17,4 +17,4 @@ links.forEach(link => link.addEventListener("click", event => {
 }));
   }
 
-  render();
+  render(state[location.pathname.slice(1)]);
