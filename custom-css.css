@@ -145,6 +145,7 @@ header figure {
 .flex-container--desktop {
   display: flex;
 }
+
 /* This should apply for tablets and above! */
 @media screen and (min-width: 768px) {
   section {
@@ -160,11 +161,11 @@ header figure {
     max-width: calc(var(--base-spacing) * 15);
     text-align: center;
     align-self: center;
-}
+  }
 
-.hero {
-  height: 40vh;
-}
+  .hero {
+    height: 40vh;
+  }
 }
 
 /* This should apply for desktops and above. */
@@ -194,7 +195,7 @@ header figure {
   }
 
   .hero {
-height: 60vh;
+    height: 60vh;
   }
 
   .flex-container--desktop {
@@ -202,9 +203,9 @@ height: 60vh;
   }
 
   .flex-row--desktop {
-  flex-direction: row;
+    flex-direction: row;
   }
-  }
+}
 
 /* Form */
 
@@ -239,8 +240,8 @@ input[type="submit"] {
 
 }
 
-  /* To be used with Javascript */
+/* To be used with Javascript */
 
-  /* .is-error {
-    box-shadow: 4px 3px 3px red;
-    } */
+/* .is-error {
+      box-shadow: 4px 3px 3px red;
+} */
