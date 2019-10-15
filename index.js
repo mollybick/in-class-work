@@ -7,7 +7,7 @@ function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
 ${Header(st)}
 ${Nav(st)}
-${Main()}
+${Main(st)}
 ${Footer()}
 `;
 }
