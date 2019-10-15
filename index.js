@@ -26,7 +26,7 @@ ${Footer()}
 router
   // Developer's Note: ':page' can be whatever you want to name the key that comes into `params` Object Literal
   .on(":page", params =>
-    render(state[`${params.page.slice(0, 1).toUpperCase()}${params.page.slice(1).toLowerCase()}`])
+    render(state[`${params.page.slice(0, 1).toUpperCase()} ${params.page.slice(1).toLowerCase()}`])
   )
   .on("/", render())
   .resolve();
