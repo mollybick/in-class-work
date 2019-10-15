@@ -165,6 +165,7 @@ header figure {
 .hero {
   height: 40vh;
 }
+}
 
 /* This should apply for desktops and above. */
 @media screen and (min-width: 960px) {
