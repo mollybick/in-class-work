@@ -10,16 +10,11 @@ ${Nav(st)}
 ${Main(st)}
 ${Footer()}
 `;
-}
+const links = document.querySelectorAll('nav a, footer a');
+links.forEach(link => link.addEventListener("click", event => {
+  event.preventDefault();
+  render(state[event.target.textContent]);
+}));
+  }
 
-render();
-
-const links = document.querySelectorAll("nav a, footer a");
-
-for (let i = 0; i < links.length; i += 1) {
-  links[i].addEventListener("click", event => {
-    event.preventDefault();
-
-    render(state[event.target.textContent]);
-  });
-}
+  render();
