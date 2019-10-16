@@ -36,5 +36,7 @@ router
       ]
     )
   )
-  .on("/", render())
+  .on("/", () => render())
   .resolve();
+
+console.log(axios);
