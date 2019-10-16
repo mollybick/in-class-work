@@ -36,6 +36,8 @@
     "stylelint-prettier": "^1.1.1"
   },
   "dependencies": {
-    "navigo": "^7.1.2"
+    "axios": "^0.19.0",
+    "navigo": "^7.1.2",
+    "save": "^2.4.0"
   }
 }
