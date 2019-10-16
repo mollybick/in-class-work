@@ -39,4 +39,10 @@ router
   .on("/", () => render())
   .resolve();
 
+<<<<<<< HEAD
 console.log(axios);
+=======
+  axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then(response => console.log(response.data.posts));
+>>>>>>> 413c215184a317d60790ac93662f25acf0ff2067
