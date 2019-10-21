@@ -39,4 +39,11 @@ router
   .on("/", () => render())
   .resolve();
 
-console.log(axios);
+  axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then(response => {
+    console.log("state.blog.main is: ", state.Blog.main);
+    state.Blog.main = response.data;
+    console.log("state.blog.main is: ", state.Blog.main);
+  })
+  .catch(err => console.log(err));
