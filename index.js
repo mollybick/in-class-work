@@ -4,7 +4,9 @@ import * as state from "./store";
 import Navigo from "navigo";
 import axios from "axios";
 
-import {capitalize} from "lodash";
+import { capitalize } from "lodash";
+
+import { db } from "./firebase";
 
 const router = new Navigo(location.origin);
 
@@ -45,17 +47,18 @@ router
 axios
   .get("https://jsonplaceholder.typicode.com/posts")
   .then(response => {
-    state.Blog.main = response.data.map(
-      ({ title, body }) => `
+    state.Blog.main = response.data
+      .map(
+        ({ title, body }) => `
     <article>
     <h2>${title}<h2>
     <p>${body}<p>
     </article>`
-    ).join("");
+      )
+      .join("");
 
     if (capitalize(router.lastRouteResolved().params.page) === "Blog") {
-      render(state.Blog)
+      render(state.Blog);
     }
-
   })
   .catch(err => console.log(err));
