@@ -4,3 +4,5 @@ export { default as About } from "./About";
 export { default as Contact} from "./Contact";
 export { default as Gallery} from "./Gallery";
 export { default as Links} from "./Links";
+
+export { default as Admin } from "./admin";
