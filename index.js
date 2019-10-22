@@ -62,3 +62,38 @@ axios
     }
   })
   .catch(err => console.log(err));
+
+//Gallery
+
+db.collection("Pictures")
+  .get()
+
+  /**
+   * Developer's Note: There is no straightforward way to get data back as an Array,
+   * so 'superpowers' are useless.😞
+   */
+  .then(querySnapshots => {
+    state.Gallery.main =
+      `<div class="gallery">` +
+      querySnapshots.docs
+        .map(doc => {
+          const { caption, credit, imgURL } = doc.data();
+
+          return `
+        <figure>
+          <img src="${imgURL}" alt="">
+          <figcaption>${caption} - ${credit}</figcaption>
+        </figure>
+      `;
+        })
+        .join(" ") +
+      `</div>`;
+
+    if (
+      router.lastRouteResolved().params &&
+      capitalize(router.lastRouteResolved().params.page) === "Gallery"
+    ) {
+      render(state.Gallery);
+    }
+  })
+  .catch(err => console.error("Error loading pics", err));
