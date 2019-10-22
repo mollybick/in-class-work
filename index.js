@@ -4,6 +4,8 @@ import * as state from "./store";
 import Navigo from "navigo";
 import axios from "axios";
 
+import {capitalize} from "lodash";
+
 const router = new Navigo(location.origin);
 
 //The parameter st represents a piece of state.
@@ -30,20 +32,30 @@ router
   .on(":page", params =>
     render(
       state[
-        `${params.page.slice(0, 1).toUpperCase()} ${params.page
-          .slice(1)
-          .toLowerCase()}`
+        capitalize(params.page)
+        // `${params.page.slice(0, 1).toUpperCase()} ${params.page
+        //   .slice(1)
+        //   .toLowerCase()}`
       ]
     )
   )
   .on("/", () => render())
   .resolve();
 
-  axios
+axios
   .get("https://jsonplaceholder.typicode.com/posts")
   .then(response => {
-    console.log("state.blog.main is: ", state.Blog.main);
-    state.Blog.main = response.data;
-    console.log("state.blog.main is: ", state.Blog.main);
+    state.Blog.main = response.data.map(
+      ({ title, body }) => `
+    <article>
+    <h2>${title}<h2>
+    <p>${body}<p>
+    </article>`
+    ).join("");
+
+    if (capitalize(router.lastRouteResolved().params.page) === "Blog") {
+      render(state.Blog)
+    }
+
   })
   .catch(err => console.log(err));
