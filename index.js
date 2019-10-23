@@ -65,18 +65,17 @@ axios
 
 //Gallery
 
-db.collection("Pictures")
+// Gallery
+db.collection("pictures")
   .get()
-
-  /**
-   * Developer's Note: There is no straightforward way to get data back as an Array,
-   * so 'superpowers' are useless.😞
-   */
   .then(querySnapshots => {
-    state.Gallery.main =
+
+    // Let's make sure to update instead of overwriting our markup
+    state.Gallery.main +=
       `<div class="gallery">` +
       querySnapshots.docs
         .map(doc => {
+          // Combine `const` with destructuring to create 3 variables from the keys in our object literal
           const { caption, credit, imgURL } = doc.data();
 
           return `
@@ -94,26 +93,81 @@ db.collection("Pictures")
       capitalize(router.lastRouteResolved().params.page) === "Gallery"
     ) {
       render(state.Gallery);
+
+      const imgURL = document.querySelector("#imgURL");
+      const caption = document.querySelector("#caption");
+      const credit = document.querySelector("#credit");
+
+      document.querySelector("form").addEventListener("submit", e => {
+        e.preventDefault();
+
+        db.collection("pictures")
+          .add({
+            imgURL: imgURL.value,
+            caption: caption.value,
+            credit: credit.value
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+          });
+      });
     }
   })
   .catch(err => console.error("Error loading pics", err));
+
 
   // Admin
 
   // render(state.Admin);
 
-  const email = document.querySelector('[type="email]');
-  const password = document.querySelector ('[type="password"]');
+// Admin
+// TODO: Rather than grabbing each element manually, consider using (`event.target.elements`) on the `submit` event.
+// Are we on Admin page?
+if (
+  router.lastRouteResolved().params &&
+  capitalize(router.lastRouteResolved().params.page) === "Admin"
+) {
+  // Are we logged in?
+  auth.onAuthStateChanged(user => {
+    console.log(user);
+    if (user) {
+      // We are logged in!
+      console.log("you are logged in!");
+      state.Admin.main = `<button type="button">Log out!</button>`;
 
-  document.querySelector("form").addEventListener("submit", e => {
-    e.preventDefault();
+      render(state.Admin);
 
-    auth
-    .signInWithEmailAndPassword(email.value, password.value)
-    .catch(err => console.error("Got an error", err.message));
+      document.querySelector("button").addEventListener("click", () => {
+        auth
+          .signOut()
+          .then(() => {
+            state.Admin.main = `
+            <form>
+              <input type="email" />
+              <input type="password" />
+              <input type="submit" value="Log in!" />
+            </form>
+          `;
 
+          render(state.Admin);
+          })
+          .catch(err => console.log("Error signing out", err.message));
+      });
+    } else {
+      const email = document.querySelector('[type="email"]');
+      const password = document.querySelector('[type="password"]');
+
+      document.querySelector("form").addEventListener("submit", e => {
+        e.preventDefault();
+
+        auth
+          .signInWithEmailAndPassword(email.value, password.value)
+          .catch(err => console.error("Got an error", err.message));
+      });
+    }
   });
+}
 
-  document.querySelector('button').addEventListener('click', () => {
-    auth.signOut().catch(err => console.log('Error signing out', err.message));
-  });
