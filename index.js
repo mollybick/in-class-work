@@ -97,3 +97,23 @@ db.collection("Pictures")
     }
   })
   .catch(err => console.error("Error loading pics", err));
+
+  // Admin
+
+  // render(state.Admin);
+
+  const email = document.querySelector('[type="email]');
+  const password = document.querySelector ('[type="password"]');
+
+  document.querySelector("form").addEventListener("submit", e => {
+    e.preventDefault();
+
+    auth
+    .signInWithEmailAndPassword(email.value, password.value)
+    .catch(err => console.error("Got an error", err.message));
+
+  });
+
+  document.querySelector('button').addEventListener('click', () => {
+    auth.signOut().catch(err => console.log('Error signing out', err.message));
+  });
